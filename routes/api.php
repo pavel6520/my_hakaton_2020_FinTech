@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/signin', 'Api\Auth@signin');
+Route::get('/redirect', 'Api\Auth@redirect');
