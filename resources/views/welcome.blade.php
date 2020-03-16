@@ -68,11 +68,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel<br>
-                    Тестовое приложение pavel6520<br>
-                    <img src="https://sun9-34.userapi.com/c841524/v841524252/5d690/Y3wCp4jsdX8.jpg" width="200" height="200"><br>
-                    pavmuz2012@yandex.ru
+                    Laravel
                 </div>
+                <h3>
+                    Тестовое приложение pavel6520<br>
+                    <img src="https://sun9-34.userapi.com/c841524/v841524252/5d690/Y3wCp4jsdX8.jpg" width="150" height="150"><br>
+                    pavmuz2012@yandex.ru
+                </h3>
                 <h2><a href="/api/signin">Авторизация через сервис</a></h2>
 
                 <div class="links">
