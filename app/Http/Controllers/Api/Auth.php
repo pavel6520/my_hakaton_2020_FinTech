@@ -8,7 +8,11 @@ use Illuminate\Http\Request;
 class Auth extends Controller
 {
     public function signin(){
-        return redirect('https://github.com/login/oauth/authorize?client_id='.config('global.oauth.client_id'));
+        session()->start();
+        if(session()->has('access_token'))
+            return redirect('/auth/continue');
+        else
+            return redirect('https://github.com/login/oauth/authorize?client_id='.config('global.oauth.client_id'));
     }
     public function redirect(){
         $client = new \GuzzleHttp\Client();
@@ -21,7 +25,14 @@ class Auth extends Controller
                 ]
             ]);
         parse_str($response->getBody()->getContents(), $res);
-        $token = $res['access_token'];
-        return response()->json($token);
+        try {
+            $token = $res['access_token'];
+        }
+        catch (\Exception $e){
+            return redirect('/api/signin');
+        }
+        session()->start();
+        session(['access_token'=>$token]);
+        return redirect('/auth/continue');
     }
 }
