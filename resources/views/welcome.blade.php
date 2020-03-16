@@ -81,7 +81,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel<br>
+                    Тестовое приложение pavel6520<br>
+                    <img src="https://sun9-34.userapi.com/c841524/v841524252/5d690/Y3wCp4jsdX8.jpg" width="200" height="200"><br>
+                    pavmuz2012@yandex.ru
                 </div>
 
                 <div class="links">
