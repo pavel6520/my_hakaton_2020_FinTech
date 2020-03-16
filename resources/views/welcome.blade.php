@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Hakaton_FinTech_2020</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -65,19 +65,6 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
 
             <div class="content">
                 <div class="title m-b-md">
@@ -86,6 +73,7 @@
                     <img src="https://sun9-34.userapi.com/c841524/v841524252/5d690/Y3wCp4jsdX8.jpg" width="200" height="200"><br>
                     pavmuz2012@yandex.ru
                 </div>
+                <h2><a href="/api/signin">Авторизация через сервис</a></h2>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
