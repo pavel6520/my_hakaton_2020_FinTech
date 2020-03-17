@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/api/signin', 'Api\Auth@signin');
+
 Route::get('/auth/redirect/github', 'Auth@redirect_github');
 Route::get('/auth/continue','Auth@continue');
 
+Route::get('/info','Info@index');
+Route::get('/info/json','Info@json');
