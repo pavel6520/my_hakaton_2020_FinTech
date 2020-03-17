@@ -72,20 +72,8 @@
         </a>
         <a href="/auth/logout"><h4>Logout</h4></a>
         <h3>Тестовое приложение pavel6520</h3><br>
-        <div>
-            <img width="300" height="300" src="{{$user->avatar}}" /><br>
-            <h3>Login: {{$user->login}}</h3>
-            <h3>Email: {{$user->email}}</h3>
-            <a href="{{$user->url}}">Profile in service</a><br>
-            <a href="/info/qr">Make QR for one access</a>
-        </div><br>
-        <br>
-        <form action="/info" method="get">
-            <div style="text-align: center;">
-                <input type="text" class="form-control" name="email" placeholder="example@www.com" style="font-size: xx-large;width: 400px;border-radius: 0px;text-align: center;display: inline;color: #0275d8;"><br><br>
-                <button type="submit" class="btn btn-md btn-primary" style="width: 200px;border-radius: 0px;">Send</button>
-            </div>
-        </form>
+        <img width="300" height="300" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data={{config('app.url')}}info?key={{$key}}" /><br>
+        <a href="/info">Return back</a><br>
     </div>
 </div>
 </body>

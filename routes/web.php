@@ -24,4 +24,5 @@ Route::get('/auth/continue','Auth@continue');
 Route::get('/auth/logout','Auth@logout');
 
 Route::get('/info','Info@index');
+Route::get('/info/qr','Info@qr');
 Route::get('/info/json','Info@json');
