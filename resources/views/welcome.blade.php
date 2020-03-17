@@ -75,7 +75,13 @@
                     <img src="https://sun9-34.userapi.com/c841524/v841524252/5d690/Y3wCp4jsdX8.jpg" width="150" height="150"><br>
                     pavmuz2012@yandex.ru
                 </h3>
-                <h2><a href="/api/signin">Авторизация через сервис</a></h2>
+                <h3>Авторизация через сервисы:</h3>
+                <div>
+                    <a href="https://github.com/login/oauth/authorize?client_id={{config('global.oauth.client_id')}}">
+                        <img width="50" height="50" src="https://www.pngitem.com/pimgs/m/128-1280162_github-logo-png-cat-transparent-png.png" about="Sign in with GitHub" alt="Sign in with GitHub">
+                    </a>
+                </div>
+                <br>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>

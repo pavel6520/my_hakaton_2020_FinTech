@@ -8,18 +8,10 @@ use App\Model\Github;
 class Auth extends Controller
 {
     public function signin(){
-        if(session()->has('accesstoken'))
+        /*if(session()->has('accesstoken'))
             return redirect('/auth/continue');
         else
-            return redirect('https://github.com/login/oauth/authorize?client_id='.config('global.oauth.client_id'));
-    }
-    public function redirect(){
-        $token = Github::gettoken(\request()->code);
-
-        if($token === false){
-            return redirect('/api/signin');
-        }
-        session()->put('accesstoken', $token);
-        return redirect('/auth/continue');
+            return redirect('https://github.com/login/oauth/authorize?client_id='.config('global.oauth.client_id'));*/
+        return response('', 501);
     }
 }
