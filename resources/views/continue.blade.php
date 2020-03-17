@@ -72,6 +72,7 @@
         </a>
         <a href="/auth/logout"><h4>Logout</h4></a>
         <h3>Тестовое приложение pavel6520</h3><br>
+        <h2>Join as: {{$login}}</h2>
         @if (isset($url))
             <img src="{{$url}}" /><br>
             <a href="/auth/continue">Continue</a>

@@ -49,9 +49,9 @@ class Auth extends Controller
                     session()->put('logined', 1);
                     return redirect('/info');
                 } else
-                    return view('continue', []);
+                    return view('continue', ['login'=>$user->login]);
             } else
-                return view('continue', []);
+                return view('continue', ['login'=>$user->login]);
         }
     }
     public function logout(){
