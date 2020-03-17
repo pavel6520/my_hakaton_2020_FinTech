@@ -38,10 +38,9 @@ class Auth extends Controller
         }
 
         $a = new Authenticator();
-        $title = 'pavel6520_hakaton_fTechLab';
         if ($user->qrsecret == null) {
             $user->setQRSecret($a->generateRandomSecret());
-            $qrCodeUrl = $a->getQR($user->login, $user->qrsecret, $title);
+            $qrCodeUrl = $a->getQR($user->login, $user->qrsecret, config('app.name'));
 
             return view('continue', ['url' => $qrCodeUrl]);
         } else {
