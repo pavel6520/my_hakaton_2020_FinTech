@@ -14,12 +14,12 @@ class Auth extends Controller
             return redirect('https://github.com/login/oauth/authorize?client_id='.config('global.oauth.client_id'));
     }
     public function redirect(){
-
-            $token = Github::gettoken(\request()->code);
+        $token = Github::gettoken(\request()->code);
 
         if($token === false){
             return redirect('/api/signin');
         }
+        session()->put('accesstoken', $token);
         return redirect('/auth/continue');
     }
 }
