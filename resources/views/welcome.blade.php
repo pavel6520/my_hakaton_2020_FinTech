@@ -70,11 +70,10 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-                <h3>
-                    Тестовое приложение pavel6520<br>
-                    <img src="https://sun9-34.userapi.com/c841524/v841524252/5d690/Y3wCp4jsdX8.jpg" width="150" height="150"><br>
-                    pavmuz2012@yandex.ru
-                </h3>
+                <a href="/auth/logout"><h4>Logout</h4></a>
+                <h3>Тестовое приложение pavel6520</h3>
+                <h3>pavmuz2012@yandex.ru</h3>
+                <img src="https://sun9-34.userapi.com/c841524/v841524252/5d690/Y3wCp4jsdX8.jpg" width="150" height="150"><br>
                 <h3>Авторизация через сервисы:</h3>
                 <div>
                     <a href="https://github.com/login/oauth/authorize?client_id={{config('global.oauth.client_id')}}">

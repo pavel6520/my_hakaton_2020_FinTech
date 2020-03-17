@@ -54,4 +54,8 @@ class Auth extends Controller
                 return view('continue', []);
         }
     }
+    public function logout(){
+        session()->flush();
+        return redirect('/');
+    }
 }

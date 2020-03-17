@@ -67,23 +67,22 @@
 <div class="flex-center position-ref full-height">
 
     <div class="content">
-        <div class="title m-b-md">
-            Laravel
-        </div>
-        <h3>
-            Тестовое приложение pavel6520<br>
-            @if (isset($url))
-                <img src="{{$url}}" /><br>
-                <a href="/auth/continue">Continue</a>
-            @else
-                <form action="/auth/continue" method="get">
-                    <div style="text-align: center;">
-                        <input type="text" class="form-control" name="code" placeholder="******" style="font-size: xx-large;width: 200px;border-radius: 0px;text-align: center;display: inline;color: #0275d8;"><br> <br>
-                        <button type="submit" class="btn btn-md btn-primary" style="width: 200px;border-radius: 0px;">Verify</button>
-                    </div>
-                </form>
-            @endif
-        </h3>
+        <a href="/">
+            <div class="title m-b-md">Laravel</div>
+        </a>
+        <a href="/auth/logout"><h4>Logout</h4></a>
+        <h3>Тестовое приложение pavel6520</h3><br>
+        @if (isset($url))
+            <img src="{{$url}}" /><br>
+            <a href="/auth/continue">Continue</a>
+        @else
+            <form action="/auth/continue" method="get">
+                <div style="text-align: center;">
+                    <input type="text" class="form-control" name="code" placeholder="******" style="font-size: xx-large;width: 200px;border-radius: 0px;text-align: center;display: inline;color: #0275d8;"><br> <br>
+                    <button type="submit" class="btn btn-md btn-primary" style="width: 200px;border-radius: 0px;">Verify</button>
+                </div>
+            </form>
+        @endif
     </div>
 </div>
 </body>

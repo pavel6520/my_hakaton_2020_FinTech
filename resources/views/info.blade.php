@@ -67,25 +67,23 @@
 <div class="flex-center position-ref full-height">
 
     <div class="content">
-        <div class="title m-b-md">
-            Laravel
-        </div>
-        <h3>
-            Тестовое приложение pavel6520<br>
-            <div>
-                <img width="300" height="300" src="{{$user->avatar}}" /><br>
-                <h4>Login: {{$user->login}}</h4>
-                <h4>Login: {{$user->email}}</h4>
-                <a href="{{$user->url}}">Profile in service</a><br>
+        <a href="/">
+            <div class="title m-b-md">Laravel</div>
+        </a>
+        <a href="/auth/logout"><h4>Logout</h4></a>
+        <h3>Тестовое приложение pavel6520</h3><br>
+        <div>
+            <img width="300" height="300" src="{{$user->avatar}}" /><br>
+            <h3>Login: {{$user->login}}</h3>
+            <h3>Email: {{$user->email}}</h3>
+            <a href="{{$user->url}}">Profile in service</a><br>
+        </div><br>
+        <form action="/info" method="get">
+            <div style="text-align: center;">
+                <input type="text" class="form-control" name="email" placeholder="example@www.com" style="font-size: xx-large;width: 400px;border-radius: 0px;text-align: center;display: inline;color: #0275d8;"><br><br>
+                <button type="submit" class="btn btn-md btn-primary" style="width: 200px;border-radius: 0px;">Send</button>
             </div>
-            <br>
-            <form action="/info" method="get">
-                <div style="text-align: center;">
-                    <input type="text" class="form-control" name="email" placeholder="example@www.com" style="font-size: xx-large;width: 400px;border-radius: 0px;text-align: center;display: inline;color: #0275d8;"><br><br>
-                    <button type="submit" class="btn btn-md btn-primary" style="width: 200px;border-radius: 0px;">Send</button>
-                </div>
-            </form>
-        </h3>
+        </form>
     </div>
 </div>
 </body>
