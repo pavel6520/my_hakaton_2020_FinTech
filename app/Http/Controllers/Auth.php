@@ -42,7 +42,7 @@ class Auth extends Controller
             $user->setQRSecret($a->generateRandomSecret());
             $qrCodeUrl = $a->getQR($user->login, $user->qrsecret, config('app.name'));
 
-            return view('continue', ['url' => $qrCodeUrl]);
+            return view('continue', ['login'=>$user->login,'url' => $qrCodeUrl]);
         } else {
             if (isset(request()->code)) {
                 if ($a->getCode($user->qrsecret) == request()->code) {
