@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Model\Github;
 
 class Auth extends Controller
 {
@@ -14,20 +14,10 @@ class Auth extends Controller
             return redirect('https://github.com/login/oauth/authorize?client_id='.config('global.oauth.client_id'));
     }
     public function redirect(){
-        $client = new \GuzzleHttp\Client();
-        $response = $client->post('https://github.com/login/oauth/access_token',
-            [
-                'json'=>[
-                    'client_id'=>config('global.oauth.client_id'),
-                    'client_secret'=>config('global.oauth.client_secret'),
-                    'code'=>\request()->code
-                ]
-            ]);
-        parse_str($response->getBody()->getContents(), $res);
-        try {
-            session()->put('accesstoken', $res['access_token']);
-        }
-        catch (\Exception $e){
+
+            $token = Github::gettoken(\request()->code);
+
+        if($token === false){
             return redirect('/api/signin');
         }
         return redirect('/auth/continue');

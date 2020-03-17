@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Model\Github;
 
 class Auth extends Controller
 {
     public function continue(){
-        if(\request()->session()->has('accesstoken') && \request()->session()->has('logined'))
+        if(session()->has('accesstoken') && session()->has('logined'))
             return redirect('/api/info');
-        else if(!\request()->session()->has('accesstoken'))
+        else if(!session()->has('accesstoken'))
             return redirect('/api/signin');
 
-        return 'Token geted!';
+        $github = Github::getuserinfo(session()->get('accesstoken'));
+
+        return $github;
     }
 }
