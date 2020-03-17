@@ -7,13 +7,11 @@ use Illuminate\Http\Request;
 class Auth extends Controller
 {
     public function continue(){
-        session()->regenerate();
-        return response()->json(\request()->session()->all());
-        if(\request()->session()->has('access_token') && \request()->session()->has('logined'))
+        if(\request()->session()->has('accesstoken') && \request()->session()->has('logined'))
             return redirect('/api/info');
-        else if(\request()->session()->has('access_token'))
+        else if(!\request()->session()->has('accesstoken'))
             return redirect('/api/signin');
 
-
+        return 'Token geted!';
     }
 }

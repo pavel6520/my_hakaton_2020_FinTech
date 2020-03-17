@@ -16,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/api/signin', 'Api\Auth@signin');
+Route::get('/api/redirect', 'Api\Auth@redirect');
 Route::get('/auth/continue','Auth@continue');
 
