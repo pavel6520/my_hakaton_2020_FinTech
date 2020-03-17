@@ -22,6 +22,7 @@ class User
         else {
             DB::table('user')
                 ->insert(['login'=>$login]);
+            $this->login = $login;
         }
     }
 
