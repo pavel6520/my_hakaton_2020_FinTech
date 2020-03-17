@@ -6,6 +6,7 @@ use App\Model\Github;
 use App\Model\OneAccess;
 use App\Model\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class Info extends Controller
 {
@@ -33,6 +34,13 @@ class Info extends Controller
         }
         else{
             return response('', 501);
+        }
+        if(isset(\request()->email)){
+            Mail::raw(json_encode(['login'=> $user->login, 'email'=>$user->email,'url'=>$user->url,'avatar'=>$user->avatar]), function ($message) {
+                $message->to(\request()->email);
+                $message->subject('User data');
+            });
+            return redirect('/info');
         }
         return view('info', ['user'=>$user]);
     }
